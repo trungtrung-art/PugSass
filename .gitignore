@@ -1,0 +1,6 @@
+node_modules/
+bower_components/
+dist/
+_dist/
+.vscode/
+package-lock.json

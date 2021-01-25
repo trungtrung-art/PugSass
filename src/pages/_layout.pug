@@ -1,0 +1,23 @@
+block var
+
+doctype html
+
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet")
+		link(rel="stylesheet", href="./css/core.min.css")
+		title #{title}
+	body(class=bodyClass)
+		block header
+			include ../components/header/index.pug
+		main
+			block main
+		block footer
+			include ../components/footer/index.pug
+		script(src="./js/core/core.js")
+		script(src="./js/test.js")
+		script(src="./js/default/jquery.min.js")
+		script(src="./js/default/bootstrap.min.js")

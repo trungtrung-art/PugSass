@@ -1,0 +1,8 @@
+@import 'base/variable';
+
+body{
+    background: $bg;
+    h1{
+        color: $red;
+    }
+}

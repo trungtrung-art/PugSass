@@ -1,0 +1,23 @@
+{
+  "name": "source-pug-sass",
+  "description": "For Frontend",
+  "main": "index.js",
+  "authors": [
+    "trungtran286 <tt2861997@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "3.4.1",
+    "font-awesome": "5.9.0",
+    "bootstrap": "4.6.0"
+  }
+}
