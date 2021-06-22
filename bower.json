@@ -1,12 +1,12 @@
 {
   "name": "source-pug-sass",
   "description": "For Frontend",
-  "main": "index.js",
+  "main": "gulpfile.babel.js",
   "authors": [
     "trungtran286 <tt2861997@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/voducmanh99/MySourc",
   "private": true,
   "ignore": [
     "**/.*",

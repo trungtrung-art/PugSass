@@ -1,0 +1,100 @@
+$layout: 100% !default
+$container: 1260px !default
+$colCount: 12 !default
+$offset: 15px !default
+
+// setting breakpoints
+$small: 576px !default
+$medium: 768px !default
+$large: 1024px !default
+$x-large: 1280px !default
+$xx-large: 1300px !default
+$xxx-large: 1400px !default
+// end setting breakpoints
+
+$grid-breakpoints: (sm: $small, md: $medium, lg: $large, xl: $x-large) !default
+$container-breakpoints: ($small: 500px, $medium: 700px, $large: 970px, $x-large: 1200px, $xx-large: 1280px) !default
+
+body
+	max-width: $layout
+	margin-left: auto
+	margin-right: auto 
+
+.container
+	width: 100%
+	max-width: $container + ($offset * 2)
+	padding-right: $offset
+	padding-left: $offset
+	margin-left: auto 
+	margin-right: auto 
+
+@each $bpNumber, $maxWidth in $container-breakpoints
+	@media (min-width: #{$bpNumber})
+		.container
+			max-width: $maxWidth
+
+.container-fluid 
+	width: 100%
+	padding-right: $offset
+	padding-left: $offset
+	margin-right: auto
+	margin-left: auto
+
+.row
+	display: flex
+	flex-wrap: wrap 
+	margin-left: -$offset
+	margin-right: -$offset
+
+.no-gutters
+	margin-left: 0
+	margin-right: 0
+
+.no-gutters>*,
+.no-gutters>[class*="col-"]
+	padding-left: 0
+	padding-right: 0
+
+[class*="col-"]
+	position: relative
+	width: 100%
+	padding-right: $offset
+	padding-left: $offset
+
+.col
+	-ms-flex-preferred-size: 0
+	flex-basis: 0
+	-ms-flex-positive: 1
+	flex-grow: 1
+	max-width: 100%
+
+.col-auto
+	-ms-flex: 0 0 auto
+	flex: 0 0 auto
+	width: auto
+	max-width: 100%
+
+@for $col from 1 through $colCount
+	.col-#{$col}
+		-ms-flex: 0 0 (100% / $colCount * $col)
+		flex: 0 0 (100% / $colCount * $col)
+		max-width: (100% / $colCount * $col)
+
+@each $bp, $value in $grid-breakpoints
+	@media (min-width: #{$value})
+		.col-#{$bp}
+			-ms-flex-preferred-size: 0
+			flex-basis: 0
+			-ms-flex-positive: 1
+			flex-grow: 1
+			max-width: 100%
+		.col-#{$bp}-auto
+			-ms-flex: 0 0 auto
+			flex: 0 0 auto
+			width: auto
+			max-width: 100%
+		@for $col from 1 through $colCount
+			.col-#{$bp}-#{$col}
+				-ms-flex: 0 0 (100% / $colCount * $col)
+				flex: 0 0 (100% / $colCount * $col)
+				max-width: (100% / $colCount * $col)
